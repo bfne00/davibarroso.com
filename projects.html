@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Davi Barroso</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ─── Projects page specific ─── */
+    .projects-hero {
+      padding: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 56px) clamp(32px, 4vw, 56px);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      position: relative;
+      z-index: 1;
+    }
+
+    .projects-hero .section-eyebrow {
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.3s;
+    }
+
+    .projects-hero .section-title {
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.5s;
+    }
+
+    .projects-hero .section-title { margin-bottom: 0; }
+
+    /* Tag filter bar */
+    .filter-bar {
+      padding: 24px clamp(24px, 4vw, 56px);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.6s;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .filter-label {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      opacity: 0.5;
+    }
+
+    .filter-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .filter-tag {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      padding: 5px 12px;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 100px;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      user-select: none;
+    }
+
+    .filter-tag:hover,
+    .filter-tag.active {
+      color: var(--ink);
+      background: var(--ink);
+      color: var(--white);
+      border-color: var(--ink);
+    }
+
+    /* Project grid */
+    .projects-grid-wrap {
+      padding: clamp(32px, 4vw, 56px) clamp(24px, 4vw, 56px);
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.8s;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card-grid {
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(8px);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project-card-grid:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+    }
+
+    .project-card-grid .project-card-top {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-card-grid .project-card-body {
+      padding: 20px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .project-metrics {
+      display: flex;
+      gap: 16px;
+      padding-top: 4px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      margin-top: 4px;
+    }
+
+    .metric {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .metric-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .metric-label {
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      opacity: 0.6;
+    }
+
+    @media (max-width: 600px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .filter-bar { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <script src="navbar.js"></script>
+
+  <div class="projects-hero">
+    <p class="section-eyebrow">Projects</p>
+    <h1 class="section-title">All <em>work</em></h1>
+  </div>
+
+  <div class="filter-bar">
+    <div class="filter-group">
+      <span class="filter-label">Type</span>
+      <div class="filter-tags">
+        <span class="filter-tag active">All</span>
+        <span class="filter-tag">Data Analysis</span>
+        <span class="filter-tag">Data Engineering</span>
+        <span class="filter-tag">Visualization</span>
+        <span class="filter-tag">Automation</span>
+      </div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Tool</span>
+      <div class="filter-tags">
+        <span class="filter-tag">Python</span>
+        <span class="filter-tag">SQL</span>
+        <span class="filter-tag">Power BI</span>
+        <span class="filter-tag">Tableau</span>
+        <span class="filter-tag">dbt</span>
+        <span class="filter-tag">n8n</span>
+        <span class="filter-tag">React</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-grid-wrap">
+    <div class="projects-grid">
+
+      <article class="project-card-grid">
+        <div class="project-card-top" style="background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);">
+          <span class="project-placeholder-img">[ dashboard ]</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-meta">
+            <span class="project-tag">Data Visualization</span>
+            <span class="project-tag">Power BI</span>
+          </div>
+          <h2 class="project-name">Sales Intelligence Dashboard</h2>
+          <p class="project-desc">End-to-end BI solution tracking $12M in pipeline across 6 regions, replacing weekly spreadsheet reports.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-value">$12M</span>
+              <span class="metric-label">Pipeline tracked</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">6</span>
+              <span class="metric-label">Regions</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">−8h</span>
+              <span class="metric-label">Weekly reports</span>
+            </div>
+          </div>
+          <a href="#" class="project-link">View case study →</a>
+        </div>
+      </article>
+
+      <article class="project-card-grid">
+        <div class="project-card-top" style="background: linear-gradient(135deg, #2d1b69 0%, #7c3aed 100%);">
+          <span class="project-placeholder-img">[ pipeline ]</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-meta">
+            <span class="project-tag">Analytics Engineering</span>
+            <span class="project-tag">dbt</span>
+            <span class="project-tag">SQL</span>
+          </div>
+          <h2 class="project-name">Data Warehouse Migration</h2>
+          <p class="project-desc">Modeled 40+ raw tables into a clean semantic layer in dbt, cutting reporting query time by 70%.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-value">40+</span>
+              <span class="metric-label">Tables modeled</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">−70%</span>
+              <span class="metric-label">Query time</span>
+            </div>
+          </div>
+          <a href="#" class="project-link">View case study →</a>
+        </div>
+      </article>
+
+      <article class="project-card-grid">
+        <div class="project-card-top" style="background: linear-gradient(135deg, #064e3b 0%, #10b981 100%);">
+          <span class="project-placeholder-img">[ automation ]</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-meta">
+            <span class="project-tag">Automation</span>
+            <span class="project-tag">n8n</span>
+            <span class="project-tag">Python</span>
+          </div>
+          <h2 class="project-name">Ops Reporting Automation</h2>
+          <p class="project-desc">Automated 3 weekly manual reports via n8n + Python, saving ~8h/week across the operations team.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-value">3</span>
+              <span class="metric-label">Reports automated</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">8h</span>
+              <span class="metric-label">Saved per week</span>
+            </div>
+          </div>
+          <a href="#" class="project-link">View case study →</a>
+        </div>
+      </article>
+
+      <article class="project-card-grid">
+        <div class="project-card-top" style="background: linear-gradient(135deg, #7c2d12 0%, #f97316 100%);">
+          <span class="project-placeholder-img">[ web app ]</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-meta">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Data Viz</span>
+          </div>
+          <h2 class="project-name">Interactive Analytics Portal</h2>
+          <p class="project-desc">Custom React dashboard exposing internal KPIs to non-technical stakeholders with drill-down filters.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-value">5k+</span>
+              <span class="metric-label">Monthly users</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">12</span>
+              <span class="metric-label">KPI views</span>
+            </div>
+          </div>
+          <a href="#" class="project-link">View case study →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+</body>
+</html>
