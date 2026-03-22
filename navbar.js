@@ -1,7 +1,7 @@
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
 const links = [
-  { label: 'Landing Page', href: 'index.html' },
+  { label: 'Home',         href: 'index.html' },
   { label: 'Projects',     href: 'projects.html' },
   { label: 'Book Rec.',    href: '#books' },
   { label: 'CV',           href: '#cv' },

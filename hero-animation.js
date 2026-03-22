@@ -2,6 +2,16 @@ const dotCells = Array(20).fill('<span class="dot-cell"></span>').join('');
 
 const animationHTML = `
   <div class="hero-animation" aria-hidden="true">
+
+    <div class="scene-grid"></div>
+
+    <span class="scene-snippet sn-1">SELECT id, amount</span>
+    <span class="scene-snippet sn-2">{{ ref('stg_orders') }}</span>
+    <span class="scene-snippet sn-3">cron: "0 8 * * 1"</span>
+    <span class="scene-snippet sn-4">CALCULATE([Revenue])</span>
+    <span class="scene-snippet sn-5">GROUP BY region</span>
+    <span class="scene-snippet sn-6">color: var(--accent)</span>
+
     <div class="iso-scene">
 
       <div class="iso-layer" data-layer="collect">

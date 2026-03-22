@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project — Davi Barroso</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project.css" />
+  <!-- marked.js for markdown rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <script src="navbar.js"></script>
+
+  <div class="project-page" id="project-page">
+    <div class="project-page-inner">
+
+      <a href="projects.html" class="project-back">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+          <path d="M11 6.5H2M6.5 2L2 6.5l4.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        All projects
+      </a>
+
+      <div id="project-content" class="project-content">
+        <p class="project-loading">Loading...</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    (async function () {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug');
+      const content = document.getElementById('project-content');
+
+      if (!slug) {
+        content.innerHTML = '<p class="project-error">No project specified.</p>';
+        return;
+      }
+
+      // Load metadata for the header
+      let meta = null;
+      try {
+        const res = await fetch('projects/index.json');
+        const all = await res.json();
+        meta = all.find(p => p.slug === slug) || null;
+      } catch (e) { /* metadata is optional */ }
+
+      // Update page title
+      if (meta) document.title = `${meta.title} — Davi Barroso`;
+
+      // Load and render markdown
+      try {
+        const res = await fetch(`projects/${slug}.md`);
+        if (!res.ok) throw new Error('not found');
+        const md = await res.text();
+
+        // Render hero from metadata if available
+        const hero = meta ? `
+          <div class="project-hero" style="background:${meta.color}">
+            <div class="project-hero-inner">
+              <div class="project-hero-tags">
+                ${[meta.type, ...meta.tools].map(t => `<span class="project-tag">${t}</span>`).join('')}
+              </div>
+              ${meta.metrics ? `
+              <div class="project-hero-metrics">
+                ${meta.metrics.map(m => `
+                  <div class="metric">
+                    <span class="metric-value" style="color:#fff">${m.value}</span>
+                    <span class="metric-label" style="color:rgba(255,255,255,0.6)">${m.label}</span>
+                  </div>`).join('')}
+              </div>` : ''}
+            </div>
+          </div>` : '';
+
+        content.innerHTML = hero + `<div class="markdown-body">${marked.parse(md)}</div>`;
+
+      } catch (e) {
+        content.innerHTML = `<p class="project-error">Could not load project "<strong>${slug}</strong>".</p>`;
+      }
+    })();
+  </script>
+</body>
+</html>
