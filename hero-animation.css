@@ -114,16 +114,46 @@
 .sn-2 { top: 28%;  right: 6%;  color: var(--accent-2); }
 .sn-3 { top: 55%;  left: 2%;                           }
 .sn-4 { top: 62%;  right: 4%;  color: var(--accent);   }
-.sn-5 { bottom: 16%; left: 8%;                         }
+.sn-5 { bottom: 16%; left: 8%;                          }
 .sn-6 { bottom: 22%; right: 7%; color: var(--accent-2); }
-
-/* Staggered appearances during collapsed phase */
+/* Staggered appearances */
 .sn-1 { animation: snippet-appear 7s ease-in-out infinite 0.0s; }
 .sn-2 { animation: snippet-appear 7s ease-in-out infinite 0.3s; }
 .sn-3 { animation: snippet-appear 7s ease-in-out infinite 0.6s; }
 .sn-4 { animation: snippet-appear 7s ease-in-out infinite 0.9s; }
 .sn-5 { animation: snippet-appear 7s ease-in-out infinite 1.2s; }
 .sn-6 { animation: snippet-appear 7s ease-in-out infinite 1.5s; }
+
+/* ─── Callout labels ─── */
+.scene-callout {
+  position: absolute;
+  bottom: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  color: var(--ink);
+  animation: snippet-appear 7s ease-in-out infinite 0.4s;
+}
+
+.callout-left  { left: 28%; }
+.callout-right { right: 22%; }
+
+.scene-callout svg {
+  opacity: 0.9;
+  width: 42px;
+  height: 30px;
+}
+
+.scene-callout span {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #1a1a18;
+  white-space: nowrap;
+}
 
 @keyframes snippet-appear {
   0%   { opacity: 0; }

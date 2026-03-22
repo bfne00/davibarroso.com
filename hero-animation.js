@@ -11,6 +11,33 @@ const animationHTML = `
     <span class="scene-snippet sn-4">CALCULATE([Revenue])</span>
     <span class="scene-snippet sn-5">GROUP BY region</span>
     <span class="scene-snippet sn-6">color: var(--accent)</span>
+    <div class="scene-callout callout-left">
+      <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="4.5" width="7" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="10.5" y="0.5" width="7" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="10.5" y="8.5" width="7" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="20.5" y="4.5" width="7" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="7.5" y1="7" x2="10.5" y2="3" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="7.5" y1="7" x2="10.5" y2="11" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="17.5" y1="3" x2="20.5" y2="7" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="17.5" y1="11" x2="20.5" y2="7" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+      <span>Pipeline Design</span>
+    </div>
+
+    <div class="scene-callout callout-right">
+      <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="4" cy="10" r="3" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="14" cy="4" r="3" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="14" cy="16" r="3" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="24" cy="10" r="3" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="7" y1="10" x2="11" y2="5" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="7" y1="10" x2="11" y2="15" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="17" y1="5" x2="21" y2="10" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="17" y1="15" x2="21" y2="10" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+      <span>User Experience Flow</span>
+    </div>
 
     <div class="iso-scene">
 
