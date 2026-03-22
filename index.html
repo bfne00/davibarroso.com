@@ -146,13 +146,154 @@
   <section id="skills" class="section">
     <p class="section-eyebrow">04 — Skills</p>
     <h2 class="section-title">Tools & <em>expertise</em></h2>
-    <div class="placeholder-box">
-      <span class="placeholder-badge">Placeholder</span>
-      <p class="placeholder-desc">
-        Technical stack organized by category: languages, BI tools,
-        data engineering, automation, and development.
-      </p>
+
+    <div class="skills-controls">
+      <div class="skills-filter-bar">
+        <button class="skill-btn active" data-filter="all">All</button>
+        <button class="skill-btn" data-filter="languages">Languages</button>
+        <button class="skill-btn" data-filter="bi">BI Tools</button>
+        <button class="skill-btn" data-filter="engineering">Engineering</button>
+        <button class="skill-btn" data-filter="automation">Automation</button>
+        <button class="skill-btn" data-filter="development">Development</button>
+      </div>
+      <input class="skills-search" type="text" placeholder="Search skill..." />
     </div>
+
+    <div class="skills-panel">
+
+      <div class="skills-list">
+
+        <div class="skill-row" data-category="languages" data-rank="master">
+          <span class="skill-name">SQL</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span></div>
+          <span class="skill-rank rank-master">Master</span>
+          <span class="skill-cat-tag">Languages</span>
+        </div>
+
+        <div class="skill-row" data-category="languages" data-rank="expert">
+          <span class="skill-name">Python</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></div>
+          <span class="skill-rank rank-expert">Expert</span>
+          <span class="skill-cat-tag">Languages</span>
+        </div>
+
+        <div class="skill-row" data-category="languages" data-rank="adept">
+          <span class="skill-name">JavaScript</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></div>
+          <span class="skill-rank rank-adept">Adept</span>
+          <span class="skill-cat-tag">Languages</span>
+        </div>
+
+        <div class="skill-row" data-category="bi" data-rank="master">
+          <span class="skill-name">Power BI</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span></div>
+          <span class="skill-rank rank-master">Master</span>
+          <span class="skill-cat-tag">BI Tools</span>
+        </div>
+
+        <div class="skill-row" data-category="bi" data-rank="expert">
+          <span class="skill-name">Tableau</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></div>
+          <span class="skill-rank rank-expert">Expert</span>
+          <span class="skill-cat-tag">BI Tools</span>
+        </div>
+
+        <div class="skill-row" data-category="bi" data-rank="adept">
+          <span class="skill-name">Looker Studio</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></div>
+          <span class="skill-rank rank-adept">Adept</span>
+          <span class="skill-cat-tag">BI Tools</span>
+        </div>
+
+        <div class="skill-row" data-category="engineering" data-rank="expert">
+          <span class="skill-name">dbt</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></div>
+          <span class="skill-rank rank-expert">Expert</span>
+          <span class="skill-cat-tag">Engineering</span>
+        </div>
+
+        <div class="skill-row" data-category="engineering" data-rank="adept">
+          <span class="skill-name">BigQuery</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></div>
+          <span class="skill-rank rank-adept">Adept</span>
+          <span class="skill-cat-tag">Engineering</span>
+        </div>
+
+        <div class="skill-row" data-category="engineering" data-rank="apprentice">
+          <span class="skill-name">Airflow</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
+          <span class="skill-rank rank-apprentice">Apprentice</span>
+          <span class="skill-cat-tag">Engineering</span>
+        </div>
+
+        <div class="skill-row" data-category="automation" data-rank="master">
+          <span class="skill-name">n8n</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span></div>
+          <span class="skill-rank rank-master">Master</span>
+          <span class="skill-cat-tag">Automation</span>
+        </div>
+
+        <div class="skill-row" data-category="automation" data-rank="adept">
+          <span class="skill-name">Make</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></div>
+          <span class="skill-rank rank-adept">Adept</span>
+          <span class="skill-cat-tag">Automation</span>
+        </div>
+
+        <div class="skill-row" data-category="automation" data-rank="apprentice">
+          <span class="skill-name">Zapier</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
+          <span class="skill-rank rank-apprentice">Apprentice</span>
+          <span class="skill-cat-tag">Automation</span>
+        </div>
+
+        <div class="skill-row" data-category="development" data-rank="expert">
+          <span class="skill-name">Git</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></div>
+          <span class="skill-rank rank-expert">Expert</span>
+          <span class="skill-cat-tag">Development</span>
+        </div>
+
+        <div class="skill-row" data-category="development" data-rank="adept">
+          <span class="skill-name">React</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></div>
+          <span class="skill-rank rank-adept">Adept</span>
+          <span class="skill-cat-tag">Development</span>
+        </div>
+
+        <div class="skill-row" data-category="development" data-rank="apprentice">
+          <span class="skill-name">Docker</span>
+          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
+          <span class="skill-rank rank-apprentice">Apprentice</span>
+          <span class="skill-cat-tag">Development</span>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      let activeFilter = 'all';
+
+      function applyFilters() {
+        const query = document.querySelector('.skills-search').value.toLowerCase();
+        document.querySelectorAll('.skill-row').forEach(row => {
+          const matchesFilter = activeFilter === 'all' || row.dataset.category === activeFilter;
+          const matchesSearch = row.querySelector('.skill-name').textContent.toLowerCase().includes(query);
+          row.classList.toggle('hidden', !matchesFilter || !matchesSearch);
+        });
+      }
+
+      document.querySelectorAll('.skill-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.skill-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeFilter = btn.dataset.filter;
+          applyFilters();
+        });
+      });
+
+      document.querySelector('.skills-search').addEventListener('input', applyFilters);
+    </script>
   </section>
 
   <!-- 05 · Contact -->
