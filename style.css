@@ -121,7 +121,6 @@ header {
   border-radius: 100px;
   background: rgba(255,255,255,0.6);
   backdrop-filter: blur(8px);
-  flex-shrink: 0;
 }
 
 .dot {
@@ -133,6 +132,51 @@ header {
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* ─── Slideshow thumbnail ─── */
+.slideshow {
+  position: relative;
+  overflow: hidden;
+}
+
+.slideshow .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slideshow .slide.active {
+  opacity: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.lang-toggle {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  padding: 5px 11px;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.lang-toggle:hover {
+  color: var(--ink);
+  background: rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.2);
 }
 
 /* ─── Hero ─── */
@@ -378,7 +422,7 @@ main {
 }
 
 .project-card {
-  flex: 0 0 340px;
+  flex: 0 0 560px;
   scroll-snap-align: start;
   border-radius: 14px;
   border: 1px solid rgba(0,0,0,0.08);
@@ -394,7 +438,7 @@ main {
 }
 
 .project-card-top {
-  height: 180px;
+  height: 360px;
   display: flex;
   align-items: center;
   justify-content: center;

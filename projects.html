@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="project.css" />
+  <script src="i18n.js"></script>
   <style>
     /* ─── Projects page specific ─── */
     .projects-hero {
@@ -97,7 +98,7 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
       gap: 20px;
     }
 
@@ -116,7 +117,7 @@
     }
 
     .project-card-grid .project-card-top {
-      height: 160px;
+      height: 360px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -171,15 +172,15 @@
   <script src="navbar.js"></script>
 
   <div class="projects-hero">
-    <p class="section-eyebrow">Projects</p>
-    <h1 class="section-title">All <em>work</em></h1>
+    <p class="section-eyebrow" data-i18n="projects.eyebrow">Projects</p>
+    <h1 class="section-title" data-i18n-html="projects.title">All <em>work</em></h1>
   </div>
 
   <div class="filter-bar">
     <div class="filter-group">
-      <span class="filter-label">Type</span>
+      <span class="filter-label" data-i18n="filter.type">Type</span>
       <div class="filter-tags">
-        <span class="filter-tag active">All</span>
+        <span class="filter-tag active" data-i18n="filter.all">All</span>
         <span class="filter-tag">Data Analysis</span>
         <span class="filter-tag">Data Engineering</span>
         <span class="filter-tag">Visualization</span>
@@ -187,7 +188,7 @@
       </div>
     </div>
     <div class="filter-group">
-      <span class="filter-label">Tool</span>
+      <span class="filter-label" data-i18n="filter.tool">Tool</span>
       <div class="filter-tags">
         <span class="filter-tag">Python</span>
         <span class="filter-tag">SQL</span>
@@ -202,112 +203,6 @@
 
   <div class="projects-grid-wrap">
     <div class="projects-grid">
-
-      <article class="project-card-grid">
-        <div class="project-card-top" style="background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);">
-          <span class="project-placeholder-img">[ dashboard ]</span>
-        </div>
-        <div class="project-card-body">
-          <div class="project-meta">
-            <span class="project-tag">Data Visualization</span>
-            <span class="project-tag">Power BI</span>
-          </div>
-          <h2 class="project-name">Sales Intelligence Dashboard</h2>
-          <p class="project-desc">End-to-end BI solution tracking $12M in pipeline across 6 regions, replacing weekly spreadsheet reports.</p>
-          <div class="project-metrics">
-            <div class="metric">
-              <span class="metric-value">$12M</span>
-              <span class="metric-label">Pipeline tracked</span>
-            </div>
-            <div class="metric">
-              <span class="metric-value">6</span>
-              <span class="metric-label">Regions</span>
-            </div>
-            <div class="metric">
-              <span class="metric-value">−8h</span>
-              <span class="metric-label">Weekly reports</span>
-            </div>
-          </div>
-          <a href="#" class="project-link">View case study →</a>
-        </div>
-      </article>
-
-      <article class="project-card-grid">
-        <div class="project-card-top" style="background: linear-gradient(135deg, #2d1b69 0%, #7c3aed 100%);">
-          <span class="project-placeholder-img">[ pipeline ]</span>
-        </div>
-        <div class="project-card-body">
-          <div class="project-meta">
-            <span class="project-tag">Analytics Engineering</span>
-            <span class="project-tag">dbt</span>
-            <span class="project-tag">SQL</span>
-          </div>
-          <h2 class="project-name">Data Warehouse Migration</h2>
-          <p class="project-desc">Modeled 40+ raw tables into a clean semantic layer in dbt, cutting reporting query time by 70%.</p>
-          <div class="project-metrics">
-            <div class="metric">
-              <span class="metric-value">40+</span>
-              <span class="metric-label">Tables modeled</span>
-            </div>
-            <div class="metric">
-              <span class="metric-value">−70%</span>
-              <span class="metric-label">Query time</span>
-            </div>
-          </div>
-          <a href="#" class="project-link">View case study →</a>
-        </div>
-      </article>
-
-      <article class="project-card-grid">
-        <div class="project-card-top" style="background: linear-gradient(135deg, #064e3b 0%, #10b981 100%);">
-          <span class="project-placeholder-img">[ automation ]</span>
-        </div>
-        <div class="project-card-body">
-          <div class="project-meta">
-            <span class="project-tag">Automation</span>
-            <span class="project-tag">n8n</span>
-            <span class="project-tag">Python</span>
-          </div>
-          <h2 class="project-name">Ops Reporting Automation</h2>
-          <p class="project-desc">Automated 3 weekly manual reports via n8n + Python, saving ~8h/week across the operations team.</p>
-          <div class="project-metrics">
-            <div class="metric">
-              <span class="metric-value">3</span>
-              <span class="metric-label">Reports automated</span>
-            </div>
-            <div class="metric">
-              <span class="metric-value">8h</span>
-              <span class="metric-label">Saved per week</span>
-            </div>
-          </div>
-          <a href="#" class="project-link">View case study →</a>
-        </div>
-      </article>
-
-      <article class="project-card-grid">
-        <div class="project-card-top" style="background: linear-gradient(135deg, #7c2d12 0%, #f97316 100%);">
-          <span class="project-placeholder-img">[ web app ]</span>
-        </div>
-        <div class="project-card-body">
-          <div class="project-meta">
-            <span class="project-tag">React</span>
-            <span class="project-tag">Data Viz</span>
-          </div>
-          <h2 class="project-name">Interactive Analytics Portal</h2>
-          <p class="project-desc">Custom React dashboard exposing internal KPIs to non-technical stakeholders with drill-down filters.</p>
-          <div class="project-metrics">
-            <div class="metric">
-              <span class="metric-value">5k+</span>
-              <span class="metric-label">Monthly users</span>
-            </div>
-            <div class="metric">
-              <span class="metric-value">12</span>
-              <span class="metric-label">KPI views</span>
-            </div>
-          </div>
-          <a href="#" class="project-link">View case study →</a>
-        </div>
-      </article>
 
     </div>
   </div>

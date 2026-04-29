@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="hero-animation.css" />
+  <script src="i18n.js"></script>
 </head>
 <body>
   <div class="blob blob-1"></div>
@@ -19,16 +20,16 @@
     <div class="hero-body">
 
       <main>
-        <p class="eyebrow">Portfolio</p>
-        <h1 class="headline">Data<br><em>Analyst</em><br>& <em>Analytics</em><br>Engineering</h1>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Portfolio</p>
+        <h1 class="headline" data-i18n-html="hero.headline">Data<br><em>Analyst</em><br>& <em>Analytics</em><br>Engineering</h1>
         <div class="divider"></div>
-        <p class="description">
+        <p class="description" data-i18n="hero.description">
           Analytics infrastructure, data visualization, and workflow automation.
           Turning fragmented business data into decisions that stick.
         </p>
         <div class="cta-row">
           <a href="mailto:davi@davibarroso.com" class="btn-primary">
-            Get in touch
+            <span data-i18n="hero.cta">Get in touch</span>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -44,7 +45,7 @@
     <footer class="hero-footer">
       <div class="stack-list">
       </div>
-      <div class="location">
+      <div class="location" data-i18n-html="hero.location">
         Curitiba, Brazil<br>Open to remote
       </div>
     </footer>
@@ -52,77 +53,14 @@
 
   <!-- 02 · Featured Projects -->
   <section id="highlights" class="section section-projects">
-    <p class="section-eyebrow">02 — Featured Projects</p>
-    <h2 class="section-title">Selected <em>work</em></h2>
+    <p class="section-eyebrow" data-i18n="section.projects.eyebrow">02 — Featured Projects</p>
+    <h2 class="section-title" data-i18n-html="section.projects.title">Selected <em>work</em></h2>
 
-    <div class="projects-track">
-
-      <article class="project-card">
-        <div class="project-card-top" style="background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);">
-          <span class="project-placeholder-img">[ dashboard ]</span>
-        </div>
-        <div class="project-card-body">
-          <div class="project-meta">
-            <span class="project-tag">Data Visualization</span>
-            <span class="project-tag">Power BI</span>
-          </div>
-          <h3 class="project-name">Sales Intelligence Dashboard</h3>
-          <p class="project-desc">End-to-end BI solution tracking $12M in pipeline across 6 regions, replacing weekly spreadsheet reports.</p>
-          <a href="#" class="project-link">View case study →</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-card-top" style="background: linear-gradient(135deg, #2d1b69 0%, #7c3aed 100%);">
-          <span class="project-placeholder-img">[ pipeline ]</span>
-        </div>
-        <div class="project-card-body">
-          <div class="project-meta">
-            <span class="project-tag">Analytics Engineering</span>
-            <span class="project-tag">dbt</span>
-            <span class="project-tag">SQL</span>
-          </div>
-          <h3 class="project-name">Data Warehouse Migration</h3>
-          <p class="project-desc">Modeled 40+ raw tables into a clean semantic layer in dbt, cutting reporting query time by 70%.</p>
-          <a href="#" class="project-link">View case study →</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-card-top" style="background: linear-gradient(135deg, #064e3b 0%, #10b981 100%);">
-          <span class="project-placeholder-img">[ automation ]</span>
-        </div>
-        <div class="project-card-body">
-          <div class="project-meta">
-            <span class="project-tag">Automation</span>
-            <span class="project-tag">n8n</span>
-            <span class="project-tag">Python</span>
-          </div>
-          <h3 class="project-name">Ops Reporting Automation</h3>
-          <p class="project-desc">Automated 3 weekly manual reports via n8n + Python, saving ~8h/week across the operations team.</p>
-          <a href="#" class="project-link">View case study →</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-card-top" style="background: linear-gradient(135deg, #7c2d12 0%, #f97316 100%);">
-          <span class="project-placeholder-img">[ web app ]</span>
-        </div>
-        <div class="project-card-body">
-          <div class="project-meta">
-            <span class="project-tag">React</span>
-            <span class="project-tag">Data Viz</span>
-          </div>
-          <h3 class="project-name">Interactive Analytics Portal</h3>
-          <p class="project-desc">Custom React dashboard exposing internal KPIs to non-technical stakeholders with drill-down filters.</p>
-          <a href="#" class="project-link">View case study →</a>
-        </div>
-      </article>
-
-    </div>
+    <div class="projects-track"></div>
+    <script src="home-loader.js"></script>
 
     <a href="projects.html" class="see-more-link">
-      View all projects
+      <span data-i18n="section.projects.viewAll">View all projects</span>
       <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
         <path d="M2 6.5h9M6.5 2l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -131,178 +69,25 @@
 
   <!-- 03 · About -->
   <section id="about" class="section">
-    <p class="section-eyebrow">03 — About</p>
-    <h2 class="section-title">Who <em>I am</em></h2>
+    <p class="section-eyebrow" data-i18n="section.about.eyebrow">03 — About</p>
+    <h2 class="section-title" data-i18n-html="section.about.title">Who <em>I am</em></h2>
     <div class="placeholder-box">
       <span class="placeholder-badge">Placeholder</span>
-      <p class="placeholder-desc">
+      <p class="placeholder-desc" data-i18n="placeholder.about">
         A short take on my background, how I think about data, and what
         drives me — concise enough to read, specific enough to matter.
       </p>
     </div>
   </section>
 
-  <!-- 04 · Skills -->
-  <section id="skills" class="section">
-    <p class="section-eyebrow">04 — Skills</p>
-    <h2 class="section-title">Tools & <em>expertise</em></h2>
-
-    <div class="skills-controls">
-      <div class="skills-filter-bar">
-        <button class="skill-btn active" data-filter="all">All</button>
-        <button class="skill-btn" data-filter="languages">Languages</button>
-        <button class="skill-btn" data-filter="bi">BI Tools</button>
-        <button class="skill-btn" data-filter="engineering">Engineering</button>
-        <button class="skill-btn" data-filter="automation">Automation</button>
-        <button class="skill-btn" data-filter="development">Development</button>
-      </div>
-      <input class="skills-search" type="text" placeholder="Search skill..." />
-    </div>
-
-    <div class="skills-panel">
-      <!-- Mudar isso aqui pra alguma tabela com essas skills ou talvez fazer com que ela detecte as skills utilizadas nos projetos -->
-      <div class="skills-list">
-
-        <div class="skill-row" data-category="languages" data-rank="master">
-          <span class="skill-name">SQL</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span></div>
-          <span class="skill-rank rank-master">Master</span>
-          <span class="skill-cat-tag">Languages</span>
-        </div>
-
-        <div class="skill-row" data-category="languages" data-rank="expert">
-          <span class="skill-name">Python</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></div>
-          <span class="skill-rank rank-expert">Expert</span>
-          <span class="skill-cat-tag">Languages</span>
-        </div>
-
-        <div class="skill-row" data-category="languages" data-rank="adept">
-          <span class="skill-name">JavaScript</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></div>
-          <span class="skill-rank rank-adept">Adept</span>
-          <span class="skill-cat-tag">Languages</span>
-        </div>
-
-        <div class="skill-row" data-category="bi" data-rank="master">
-          <span class="skill-name">Power BI</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span></div>
-          <span class="skill-rank rank-master">Master</span>
-          <span class="skill-cat-tag">BI Tools</span>
-        </div>
-
-        <div class="skill-row" data-category="bi" data-rank="expert">
-          <span class="skill-name">Tableau</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></div>
-          <span class="skill-rank rank-expert">Expert</span>
-          <span class="skill-cat-tag">BI Tools</span>
-        </div>
-
-        <div class="skill-row" data-category="bi" data-rank="adept">
-          <span class="skill-name">Looker Studio</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></div>
-          <span class="skill-rank rank-adept">Adept</span>
-          <span class="skill-cat-tag">BI Tools</span>
-        </div>
-
-        <div class="skill-row" data-category="engineering" data-rank="expert">
-          <span class="skill-name">dbt</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></div>
-          <span class="skill-rank rank-expert">Expert</span>
-          <span class="skill-cat-tag">Engineering</span>
-        </div>
-
-        <div class="skill-row" data-category="engineering" data-rank="adept">
-          <span class="skill-name">BigQuery</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></div>
-          <span class="skill-rank rank-adept">Adept</span>
-          <span class="skill-cat-tag">Engineering</span>
-        </div>
-
-        <div class="skill-row" data-category="engineering" data-rank="apprentice">
-          <span class="skill-name">Airflow</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
-          <span class="skill-rank rank-apprentice">Apprentice</span>
-          <span class="skill-cat-tag">Engineering</span>
-        </div>
-
-        <div class="skill-row" data-category="automation" data-rank="master">
-          <span class="skill-name">n8n</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span></div>
-          <span class="skill-rank rank-master">Master</span>
-          <span class="skill-cat-tag">Automation</span>
-        </div>
-
-        <div class="skill-row" data-category="automation" data-rank="adept">
-          <span class="skill-name">Make</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></div>
-          <span class="skill-rank rank-adept">Adept</span>
-          <span class="skill-cat-tag">Automation</span>
-        </div>
-
-        <div class="skill-row" data-category="automation" data-rank="apprentice">
-          <span class="skill-name">Zapier</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
-          <span class="skill-rank rank-apprentice">Apprentice</span>
-          <span class="skill-cat-tag">Automation</span>
-        </div>
-
-        <div class="skill-row" data-category="development" data-rank="expert">
-          <span class="skill-name">Git</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span></div>
-          <span class="skill-rank rank-expert">Expert</span>
-          <span class="skill-cat-tag">Development</span>
-        </div>
-
-        <div class="skill-row" data-category="development" data-rank="adept">
-          <span class="skill-name">React</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span></div>
-          <span class="skill-rank rank-adept">Adept</span>
-          <span class="skill-cat-tag">Development</span>
-        </div>
-
-        <div class="skill-row" data-category="development" data-rank="apprentice">
-          <span class="skill-name">Docker</span>
-          <div class="skill-pips"><span class="pip filled"></span><span class="pip filled"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
-          <span class="skill-rank rank-apprentice">Apprentice</span>
-          <span class="skill-cat-tag">Development</span>
-        </div>
-
-      </div>
-    </div>
-
-    <script>
-      let activeFilter = 'all';
-
-      function applyFilters() {
-        const query = document.querySelector('.skills-search').value.toLowerCase();
-        document.querySelectorAll('.skill-row').forEach(row => {
-          const matchesFilter = activeFilter === 'all' || row.dataset.category === activeFilter;
-          const matchesSearch = row.querySelector('.skill-name').textContent.toLowerCase().includes(query);
-          row.classList.toggle('hidden', !matchesFilter || !matchesSearch);
-        });
-      }
-
-      document.querySelectorAll('.skill-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.skill-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          activeFilter = btn.dataset.filter;
-          applyFilters();
-        });
-      });
-
-      document.querySelector('.skills-search').addEventListener('input', applyFilters);
-    </script>
-  </section>
 
   <!-- 05 · Contact -->
   <section id="contact" class="section">
-    <p class="section-eyebrow">05 — Contact</p>
-    <h2 class="section-title">Let's <em>talk</em></h2>
+    <p class="section-eyebrow" data-i18n="section.contact.eyebrow">05 — Contact</p>
+    <h2 class="section-title" data-i18n-html="section.contact.title">Let's <em>talk</em></h2>
     <div class="placeholder-box">
       <span class="placeholder-badge">Placeholder</span>
-      <p class="placeholder-desc">
+      <p class="placeholder-desc" data-i18n="placeholder.contact">
         Contact form and links to LinkedIn, GitHub, and other networks.
       </p>
     </div>

@@ -1,59 +1,22 @@
 [
   {
-    "slug": "sales-dashboard",
-    "title": "Sales Intelligence Dashboard",
-    "description": "End-to-end BI solution tracking $12M in pipeline across 6 regions, replacing weekly spreadsheet reports.",
-    "type": "Data Visualization",
-    "tools": ["Power BI"],
-    "color": "linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%)",
-    "date": "2024-12",
-    "featured": true,
-    "metrics": [
-      { "value": "$12M", "label": "Pipeline tracked" },
-      { "value": "6",    "label": "Regions" },
-      { "value": "−8h",  "label": "Weekly reports" }
-    ]
-  },
-  {
-    "slug": "warehouse-migration",
-    "title": "Data Warehouse Migration",
-    "description": "Modeled 40+ raw tables into a clean semantic layer in dbt, cutting reporting query time by 70%.",
-    "type": "Data Engineering",
-    "tools": ["dbt", "SQL"],
-    "color": "linear-gradient(135deg, #2d1b69 0%, #7c3aed 100%)",
-    "date": "2024-09",
-    "featured": true,
-    "metrics": [
-      { "value": "40+",  "label": "Tables modeled" },
-      { "value": "−70%", "label": "Query time" }
-    ]
-  },
-  {
-    "slug": "ops-automation",
-    "title": "Ops Reporting Automation",
-    "description": "Automated 3 weekly manual reports via n8n + Python, saving ~8h/week across the operations team.",
-    "type": "Automation",
-    "tools": ["n8n", "Python"],
-    "color": "linear-gradient(135deg, #064e3b 0%, #10b981 100%)",
-    "date": "2024-06",
-    "featured": true,
-    "metrics": [
-      { "value": "3",   "label": "Reports automated" },
-      { "value": "8h",  "label": "Saved per week" }
-    ]
-  },
-  {
-    "slug": "analytics-portal",
-    "title": "Interactive Analytics Portal",
-    "description": "Custom React dashboard exposing internal KPIs to non-technical stakeholders with drill-down filters.",
+    "slug": "saneamento-brasil",
+    "title": "Brazil's Sanitation Divide",
+    "title_pt": "O Brasil que tem saneamento e o Brasil que não tem",
+    "description": "Interactive data visualization exploring sanitation infrastructure disparities across Brazilian municipalities.",
+    "description_pt": "Visualização de dados interativa sobre as disparidades de saneamento básico entre os municípios brasileiros.",
     "type": "Visualization",
-    "tools": ["React"],
-    "color": "linear-gradient(135deg, #7c2d12 0%, #f97316 100%)",
-    "date": "2024-03",
+    "tools": ["React", "Python", "BigQuery", "SQL", "deck.gl"],
+    "color": "linear-gradient(135deg, #0c4a6e 0%, #0891b2 100%)",
+    "date": "2026-04",
     "featured": true,
-    "metrics": [
-      { "value": "5k+", "label": "Monthly users" },
-      { "value": "12",  "label": "KPI views" }
+    "url": "https://saneamento.davibarroso.com",
+    "images": [
+      "projects/assets/1.png",
+      "projects/assets/2.png",
+      "projects/assets/3.png",
+      "projects/assets/4.png",
+      "projects/assets/5.png"
     ]
   }
 ]

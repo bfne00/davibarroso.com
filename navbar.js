@@ -1,11 +1,11 @@
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const _t = key => (window.i18n ? window.i18n.t(key) : key);
 
 const links = [
-  { label: 'Home',         href: 'index.html' },
-  { label: 'Projects',     href: 'projects.html' },
-  { label: 'Book Rec.',    href: '#books' },
-  { label: 'CV',           href: '#cv' },
-  { label: 'Contact Me',   href: 'index.html#contact' },
+  { key: 'nav.home',     href: 'index.html' },
+  { key: 'nav.projects', href: 'projects.html' },
+  { key: 'nav.cv',       href: '#cv' },
+  { key: 'nav.contact',  href: 'index.html#contact' },
 ];
 
 const navHTML = `
@@ -13,12 +13,15 @@ const navHTML = `
     <a href="index.html" class="logo">Davi B. Barroso</a>
     <nav class="nav">
       ${links.map(l => `
-        <a href="${l.href}" class="nav-link${l.href === currentPage ? ' nav-link--active' : ''}">${l.label}</a>
+        <a href="${l.href}" class="nav-link${l.href === currentPage ? ' nav-link--active' : ''}">${_t(l.key)}</a>
       `).join('')}
     </nav>
-    <div class="status-pill">
-      <span class="dot"></span>
-      Building something
+    <div class="header-right">
+      <button id="lang-toggle" class="lang-toggle" onclick="window.i18n && window.i18n.toggle()">${window.i18n ? (window.i18n.lang === 'pt' ? 'EN' : 'PT') : 'PT'}</button>
+      <div class="status-pill">
+        <span class="dot"></span>
+        <span data-i18n="nav.status">${_t('nav.status')}</span>
+      </div>
     </div>
   </header>
 `;
